@@ -6,20 +6,36 @@
 
 /**
  *
- * @author CHANGE_THIS_TO_YOUR_NAME
+ * @author Nate_Messenger
  */
-public class IceCream {
+public class IceCream extends DessertItem {
 
-    public IceCream(String name, int cost)
-    {
-        
+    public int cost;
+
+    public IceCream(String name, int cost) {
+        super(name);
+
+        this.cost = cost;
     }
 
-  
-    public String toString()
-    {
-     
-       
+    public String toString() {
+
+        String p = cost + "";
+        int spaces = DessertShoppe.RECEIPT_WIDTH - (super.getName().length() + p.length());
+
+        String output = super.getName();
+        for (int i = 0; i < spaces - 1; i++) {
+            output += " ";
+        }
+        output += DessertShoppe.cents2dollarsAndCents(getCost());
+
+        return output;
+
     }
-    
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
 }
