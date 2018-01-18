@@ -12,13 +12,22 @@ public class Candy extends DessertItem {
 
     private double weight;
     private int pricePerLbs;
-
+/***
+ * constructor
+ * @param name name to give to the super class
+ * @param weight use as calculations
+ * @param pricePerLbs for calculations
+ */
     public Candy(String name, double weight, int pricePerLbs) {
         super(name);
         this.weight = weight;
         this.pricePerLbs = pricePerLbs;
     }
 
+    /***
+     * formating 
+     * @return the format for the receipt
+     */
     public String toString() {
         String p = getCost() +"" ;
         String output = weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(pricePerLbs) + " /Lb." + "\n";
@@ -32,6 +41,10 @@ public class Candy extends DessertItem {
         return output;
     }
 
+    /***
+     * calculations to get the cost of the item
+     * @return the cost in cents
+     */
     @Override
     public int getCost() {
         double cost = weight * pricePerLbs;

@@ -12,12 +12,21 @@ public class IceCream extends DessertItem {
 
     public int cost;
 
+    /***
+     * constructor
+     * @param name name for the super class
+     * @param cost cost of the item
+     */
     public IceCream(String name, int cost) {
         super(name);
 
         this.cost = cost;
     }
 
+    /***
+     * formating
+     * @return formating for the receipt
+     */
     public String toString() {
 
         String p = cost + "";
@@ -33,6 +42,10 @@ public class IceCream extends DessertItem {
 
     }
 
+    /***
+     * total cost of ice cream
+     * @return the cost of the ice cream in cents
+     */
     @Override
     public int getCost() {
         return cost;

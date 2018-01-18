@@ -36,6 +36,7 @@ public class Checkout {
     }
     
     
+    @Override
     public String toString()
     {
         String output = "";

@@ -13,15 +13,24 @@ public class Cookie extends DessertItem {
     private int number;
     private double pricePer12;
 
+    /***
+     * constructor
+     * @param name name for the super class
+     * @param number how many are being bought
+     * @param pricePer12 how much the cookies cost per dozen
+     */
     public Cookie(String name, int number, int pricePer12) {
         super(name);
         this.number = number;
         this.pricePer12 = pricePer12;
     }
 
+    /***
+     * formating
+     * @return formating for the receipt
+     */
     public String toString() {
         String p = pricePer12 + "";
-        System.out.println();
         int spaces = DessertShoppe.RECEIPT_WIDTH - (super.getName().length() + p.length());
         String output = number + " @ $" + DessertShoppe.cents2dollarsAndCents((int)pricePer12) + " /dz" + "\n";
         output += super.getName();
@@ -33,6 +42,10 @@ public class Cookie extends DessertItem {
         return output;
     }
 
+    /***
+     * calculations for cost
+     * @return the cost of the item in cents
+     */
     @Override
     public int getCost() {
         double numberC = pricePer12 / 12;
